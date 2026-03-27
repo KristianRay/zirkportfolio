@@ -164,3 +164,28 @@ tl5.fromTo(
     duration: 1,
   }
 );
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalClose = document.querySelector(".modal-close");
+
+  // CLICK HANDLER (works even with animation)
+  document.body.addEventListener("click", (e) => {
+    if (e.target.classList.contains("carousel-item")) {
+      modal.style.display = "block";
+      modalImg.src = e.target.src;
+    }
+  });
+
+  // CLOSE BUTTON
+  modalClose.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  // CLICK OUTSIDE IMAGE
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
