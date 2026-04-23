@@ -177,9 +177,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // CLOSE BUTTON
   modalClose.addEventListener("click", () => {
-    modal.style.display = "flex";
+    modal.style.display = "none";
   });
 
   // CLICK OUTSIDE IMAGE
