@@ -165,6 +165,11 @@ tl5.fromTo(
   }
 );
 document.addEventListener("DOMContentLoaded", () => {
+  // Lazy load all carousel items
+  document.querySelectorAll(".carousel-item").forEach(img => {
+    img.setAttribute("loading", "lazy");
+  });
+
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImg");
   const modalClose = document.querySelector(".modal-close");
